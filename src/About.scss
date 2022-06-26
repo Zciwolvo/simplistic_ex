@@ -1,0 +1,47 @@
+.AboutSection {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    height: 100%;
+    min-height: 470px;
+}
+
+.AboutSection h1 {
+    text-align: left;
+    font-weight: 500;
+}
+
+.AboutSection p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 2em;
+    margin: 0;
+    max-width: 40%;
+}
+
+.AboutSection img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0.4em;
+    margin-right: 1em;
+    color: white;
+}
+
+.AboutSection div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 20em;
+}
+
+@media (max-width: 720px) {
+    .AboutSection p {
+        text-align: left;
+        font-weight: 300;
+        max-width: 90vw;
+        font-size: 2em;
+    }
+}

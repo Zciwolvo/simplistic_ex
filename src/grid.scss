@@ -1,0 +1,82 @@
+.gridrow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    overflow-x: hidden;
+    align-items: flex-start;
+    max-width: 1920px;
+}
+
+.popup {
+    width: auto;
+    height: auto;
+    position: fixed;
+    z-index: 10;
+    top: 5%;
+}
+
+.popup img {
+    width: auto;
+    height: 90vh;
+    max-width: 80vw;
+}
+
+.popup p {
+    position: absolute;
+    margin: 0;
+    font-size: 2em;
+    width: 5em;
+}
+
+
+/* Create four equal columns that sits next to each other */
+
+.column {
+    flex: 30%;
+    max-width: 30%;
+    margin: 0 1em 1em 0em;
+    position: relative;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+    @media (max-width: 720px) {
+        width: 90%;
+    }
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+        margin: 0;
+    }
+    .popup img {
+        height: 50vh;
+    }
+    .popup {
+        top: 20%;
+    }
+}
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+}

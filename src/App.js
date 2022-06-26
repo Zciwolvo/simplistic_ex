@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef, useEffect } from "react";
+import About from "./about";
+
+import "./App.scss";
+import Contact from "./contact";
+import Footer from "./footer";
+import Gallery from "./gallery";
+import MainHeader from "./header";
 
 function App() {
+  const [cattegory, setCattegory] = useState(true);
+  const [index, setIndex] = useState(0);
+  const view = [Gallery, About, Contact];
+
+  const Page = view[index];
+
+  const listInnerRef = useRef();
+
+  const onScroll = () => {
+    if (listInnerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = listInnerRef.current;
+      if (scrollTop + clientHeight === scrollHeight) {
+        console.log("reached bottom");
+      }
+    }
+  };
+
+  useEffect(() => {
+    onScroll();
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainHeader setCattegory={setCattegory} setIndex={setIndex} />
+      <Page cattegory={cattegory} setCattegory={setCattegory} />
+      <Footer />
     </div>
   );
 }

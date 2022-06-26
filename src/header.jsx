@@ -7,9 +7,9 @@ import insta from "./icons/in.svg";
 import tw from "./icons/tw.svg";
 import yt from "./icons/yt.svg";
 
-const MainHeader = ({ setCattegory, setIndex }) => {
+const MainHeader = ({ setIndex }) => {
   return (
-    <div className="App">
+    <div>
       <div className="header">
         <h1>Your Name</h1>
         <div className="row">

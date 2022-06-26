@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import About from "./about";
 
 import "./App.scss";
@@ -13,21 +13,6 @@ function App() {
   const view = [Gallery, About, Contact];
 
   const Page = view[index];
-
-  const listInnerRef = useRef();
-
-  const onScroll = () => {
-    if (listInnerRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } = listInnerRef.current;
-      if (scrollTop + clientHeight === scrollHeight) {
-        console.log("reached bottom");
-      }
-    }
-  };
-
-  useEffect(() => {
-    onScroll();
-  });
 
   return (
     <div className="App">

@@ -1,7 +1,7 @@
 {
   "name": "simplistic_ex",
   "version": "0.1.0",
-  "homepage": "/simplistic_ex",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
